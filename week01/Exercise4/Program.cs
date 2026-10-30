@@ -13,7 +13,7 @@ class Program
         while (number != 0)
         {
             Console.Write("Enter a number: ");
-        
+
             number = int.Parse(Console.ReadLine());
 
             if (number != 0)
@@ -22,13 +22,30 @@ class Program
             }
         }
 
-    int sum = 0;
+        int sum = 0;
 
-    foreach (int item in numbers)
-    {
-        sum += item;
-    }
+        foreach (int item in numbers)
+        {
+            sum += item;
+        }
 
-    Console.WriteLine($"The sum is: {sum}");
+        Console.WriteLine($"The sum is: {sum}");
+
+        if (numbers.Count > 0)
+        {
+            double average = (double)sum / numbers.Count;
+            Console.WriteLine($"The average is: {average}");
+
+            int largest = numbers[0];
+
+            foreach (int item in numbers)
+            {
+                if (item > largest)
+                {
+                    largest = item;
+                }
+            }
+            Console.WriteLine($"The largest number is: {largest}");
+        }
     }
 }
