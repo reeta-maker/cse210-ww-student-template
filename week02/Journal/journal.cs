@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+
 public class Journal
 {
     public List<Entry> _entries = new List<Entry>();
@@ -8,6 +10,7 @@ public class Journal
     {
         _entries.Add(newEntry);
     }
+
     public void DisplayAll()
     {
         foreach (Entry entry in _entries)
@@ -25,10 +28,11 @@ public class Journal
         {
             foreach (Entry entry in _entries)
             {
-                outputFile.WriteLine($"{entry._date}\n{entry._promptText} {entry._entryText}");
+                outputFile.WriteLine($"{entry._date}|{entry._promptText}|{entry._entryText}");
             }
         }
     }
+
     public void LoadFromFile(string file)
     {
         string[] lines = File.ReadAllLines(file);
@@ -37,7 +41,6 @@ public class Journal
 
         foreach (string line in lines)
         {
-            // Skip empty lines or lines without the delimiter
             if (string.IsNullOrWhiteSpace(line))
             {
                 continue;
@@ -45,7 +48,7 @@ public class Journal
 
             string[] parts = line.Split('|');
 
-            if (parts.Length < 3)
+            if (parts.Length != 3)
             {
                 continue;
             }
@@ -58,5 +61,4 @@ public class Journal
             _entries.Add(entry);
         }
     }
-
 }
