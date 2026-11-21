@@ -21,8 +21,8 @@ public class Customer
         return _address;
     }
 
-    public bool IsJapan()
+    public bool IsUSA()
     {
-        return _address.IsJapan();
+        return _address.IsUSA();
     }
 }

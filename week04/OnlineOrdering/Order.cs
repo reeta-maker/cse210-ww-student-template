@@ -25,7 +25,7 @@ public class Order
             total += p.GetTotalCost();
         }
 
-        if (_customer.IsJapan())
+        if (_customer.IsUSA())
         {
             total += 5;
         }

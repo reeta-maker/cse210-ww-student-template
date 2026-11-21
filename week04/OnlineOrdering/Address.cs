@@ -15,9 +15,9 @@ public class Address
         _country = country;
     }
 
-    public bool IsJapan()
+    public bool IsUSA()
     {
-        if (_country == "Japan")
+        if (_country == "USA")
         {
             return true;
         }

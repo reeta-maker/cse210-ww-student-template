@@ -4,9 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Order 1 (Japan Customer - $35 international shipping)
-        Address address1 = new Address("45 Sakura Dori", "Narita", "Chiba", "Japan");
-        Customer customer1 = new Customer("Kenji Sato", address1);
+        // Order 1 (USA Customer - $35 international shipping)
+        Address address1 = new Address("8789 Ferry Drive", "NY 10104", "NEW YORK", "USA");
+        Customer customer1 = new Customer("Dirk Witter", address1);
         Order order1 = new Order(customer1);
 
         Product product1 = new Product("Wireless Mouse", "WM101", 25.00, 2);
